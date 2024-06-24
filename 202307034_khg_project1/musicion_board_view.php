@@ -30,8 +30,8 @@
 	$result = mysqli_query($con, $sql);
 
 	$row = mysqli_fetch_array($result);
-	$id      = $row["id"];
-	$name      = $row["name"];
+	$id = (isnull($row["id"])?"존재하지 않는 ID":$row["id"]);
+	$name = (isnull($row["id"])?"존재하지 않는 사용자":$row["name"]);
 	$regist_day = $row["regist_day"];
 	$subject    = $row["subject"];
 	$content    = $row["content"];

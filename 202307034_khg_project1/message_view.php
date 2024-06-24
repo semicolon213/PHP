@@ -25,8 +25,8 @@
 	$result = mysqli_query($con, $sql);
 
 	$row = mysqli_fetch_array($result);
-	$send_id    = $row["send_id"];
-	$rv_id      = $row["rv_id"];
+	$send_id    = (isnull($row["send_id"])?"존재하지않는 ID":$now["send_id"]);
+	$rv_id      = (isnull($row["rv_id"])?"존재하지않는 ID":$now["rv_id"]);
 	$regist_day = $row["regist_day"];
 	$subject    = $row["subject"];
 	$content    = $row["content"];
